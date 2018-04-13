@@ -232,6 +232,28 @@ export const asyncRouterMap = [
     redirect: 'noredirect',
     children: [{ path: 'index', component: _import('clipboard/index'), name: 'clipboardDemo', meta: { title: 'clipboardDemo', icon: 'clipboard' }}]
   },
+  // {
+  //   path: '/configuration',
+  //   component: Layout,
+  //   redirect: 'noredirect',
+  //   children: [{ path: 'config', component: _import('configuration/config'), name: '公共配置中心', meta: { title: '公共配置中心', icon: 'zip' }}]
+  // },
+  {
+    path: '/configuration',
+    component: Layout,
+    redirect: 'noredirect',
+    name: '公共配置中心',
+    meta: {
+      title: '公共配置中心',
+      icon: 'form'
+    },
+    children: [
+      { path: 'config', component: _import('configuration/config'), name: 'mysql', meta: { title: 'mysql', icon: 'zip' }},
+      { path: 'config', component: _import('configuration/config'), name: 'kaoffca', meta: { title: 'kaoffca', icon: 'table' }},
+      { path: 'config', component: _import('configuration/config'), name: 'redis', meta: { title: 'redis', icon: 'table' }},
+      { path: 'config', component: _import('configuration/config'), name: '微服務', meta: { title: '微服務', icon: 'table' }}
+    ]
+  },
 
   {
     path: '/i18n',
